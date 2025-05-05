@@ -1,0 +1,12 @@
+[Unit]
+Description=Simple Network sniffer
+[Service]
+User=root
+ExecStart=/usr/local/sbin/sniffer_rezo
+Restart=on-failure
+StandardOutput=append:/var/log/sniffer_rezo.log
+StandardError=append:/var/log/sniffer_rezo.log
+Type=forking
+TimeoutSec=1
+[Install]
+WantedBy=multi-user.target
